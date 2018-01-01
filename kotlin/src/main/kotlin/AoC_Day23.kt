@@ -59,7 +59,7 @@ object AoC_Day23 {
         }
         return false
     }
-
+    /*
     fun rewritten() : Int {
         val low = 81 * 100 + 100000
         val high = low + 17000
@@ -107,4 +107,5 @@ object AoC_Day23 {
             b += 17
         }
     }
+    */
 }

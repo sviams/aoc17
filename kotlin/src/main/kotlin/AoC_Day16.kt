@@ -37,12 +37,12 @@ object AoC_Day16 {
     fun doAll(moves: List<(CharArray) -> CharArray>, initState: CharArray) : CharArray =
         moves.fold(initState) {state, move -> move(state)}
 
-    fun solvePt1(input: Sequence<String>) : String {
+    fun solvePt1(input: List<String>) : String {
         val moveOps = parseMoves(input.first().split(","))
         return doAll(moveOps, startState).joinToString("")
     }
 
-    fun solvePt2(input: Sequence<String>) : String {
+    fun solvePt2(input: List<String>) : String {
         val moveOps = parseMoves(input.first().split(","))
         val initial = doAll(moveOps, startState)
         val repeatCycle = generateSequence(initial) { doAll(moveOps, it) }.takeWhileInclusive { !(it contentEquals startState) }

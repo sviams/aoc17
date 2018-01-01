@@ -9,8 +9,7 @@ class AoC_Day16_Tests : Spek({
     given("AoC Day 16 part 1") {
 
         it("should be correct for the task") {
-            val content = File("c:\\tmp\\aoc_16.txt").readLines().asSequence()
-            assertEquals("namdgkbhifpceloj", AoC_Day16.solvePt1(content))
+            assertEquals("namdgkbhifpceloj", AoC_Day16.solvePt1(readResource("16.txt")))
         }
 
     }
@@ -18,8 +17,7 @@ class AoC_Day16_Tests : Spek({
     given("AoC Day 16 part 2") {
 
         it("should be correct for the task") {
-            val content = File("c:\\tmp\\aoc_16.txt").readLines().asSequence()
-            assertEquals("ibmchklnofjpdeag", AoC_Day16.solvePt2(content))
+            assertEquals("ibmchklnofjpdeag", AoC_Day16.solvePt2(readResource("16.txt")))
         }
 
     }

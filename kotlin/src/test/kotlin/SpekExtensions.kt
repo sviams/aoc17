@@ -9,3 +9,7 @@ fun TestContainer.benchedIt(desc: String, iterations: Int, body: () -> Unit) {
         println("Benchmark average over $iterations iterations:  ${dur.toMinutes()}m ${dur.seconds}s ${dur.nano / 1000000}ms")
     }
 }
+
+fun TestBody.readResource(name: String) : List<String> = this::class.java.classLoader.getResource(name).readText().split("\r\n")
+
+fun TestContainer.readResource(name: String) : List<String> = this::class.java.classLoader.getResource(name).readText().split("\r\n")

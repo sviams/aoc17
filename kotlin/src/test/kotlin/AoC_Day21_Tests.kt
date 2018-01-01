@@ -90,22 +90,19 @@ class AoC_Day21_Tests : Spek({
     given("AoC Day 21 part 1") {
 
         it("should be correct for ref data") {
-            val content = File("c:\\tmp\\aoc_21_ref.txt").readLines()
-            assertEquals(12, AoC_Day21.solve(content, 2))
+            assertEquals(12, AoC_Day21.solve(readResource("21_ref.txt"), 2))
         }
 
         it("should be correct for the task") {
-            val content = File("c:\\tmp\\aoc_21.txt").readLines()
-            assertEquals(139, AoC_Day21.solve(content, 5))
+            assertEquals(139, AoC_Day21.solve(readResource("21.txt"), 5))
         }
 
     }
 
     given("AoC Day 21 part 2") {
 
-        it("should be correct for the task") { // 2s 602 ms benched
-            val content = File("c:\\tmp\\aoc_21.txt").readLines()
-            assertEquals(1857134, AoC_Day21.solve(content, 18))
+        it("should be correct for the task") { // 1s 940 ms benched
+            assertEquals(1857134, AoC_Day21.solve(readResource("21.txt"), 18))
         }
 
     }

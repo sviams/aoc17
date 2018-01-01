@@ -16,7 +16,8 @@ object AoC_Day10 {
 
     fun denseToString(input: List<Int>) = input.joinToString("") { it.toString(16).padStart(2, '0')}
 
-    fun solvePt1(stepSequence: Sequence<Int>, initialState: List<Int>) : Int {
+    fun solvePt1(input: String, initialState: List<Int>) : Int {
+        val stepSequence = input.split(',').map { it.toInt() }.asSequence()
         val endState = createSparse(stepSequence, SparseState(initialState, 0, 0)).list
         return endState[0] * endState[1]
     }

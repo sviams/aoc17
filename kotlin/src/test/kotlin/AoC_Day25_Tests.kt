@@ -9,23 +9,19 @@ class AoC_Day25_Tests : Spek({
     given("AoC Day 25 part 1 input parsing") {
 
         it("correctly parses startOp") {
-            val content = File("c:\\tmp\\aoc_25_ref.txt").readLines()
-            assertEquals('A', AoC_Day25.parseInput(content).first.nextOp)
+            assertEquals('A', AoC_Day25.parseInput(readResource("25_ref.txt")).first.nextOp)
         }
 
         it("correctly parses startOp for the task") {
-            val content = File("c:\\tmp\\aoc_25.txt").readLines()
-            assertEquals('A', AoC_Day25.parseInput(content).first.nextOp)
+            assertEquals('A', AoC_Day25.parseInput(readResource("25_ref.txt")).first.nextOp)
         }
 
         it("correctly parses stopCond") {
-            val content = File("c:\\tmp\\aoc_25_ref.txt").readLines()
-            assertEquals(6, AoC_Day25.parseInput(content).first.stopCond)
+            assertEquals(6, AoC_Day25.parseInput(readResource("25_ref.txt")).first.stopCond)
         }
 
         it("correctly parses stopCond for the task") {
-            val content = File("c:\\tmp\\aoc_25.txt").readLines()
-            assertEquals(12656374, AoC_Day25.parseInput(content).first.stopCond)
+            assertEquals(12656374, AoC_Day25.parseInput(readResource("25.txt")).first.stopCond)
         }
 
     }
@@ -35,13 +31,11 @@ class AoC_Day25_Tests : Spek({
 
 
         it("should be correct for ref data") {
-            val content = File("c:\\tmp\\aoc_25_ref.txt").readLines()
-            assertEquals(3, AoC_Day25.solvePt1(content))
+            assertEquals(3, AoC_Day25.solvePt1(readResource("25_ref.txt")))
         }
 
         it("should be correct for the task") {
-            val content = File("c:\\tmp\\aoc_25.txt").readLines()
-            assertEquals(2526, AoC_Day25.solvePt1(content))
+            assertEquals(2526, AoC_Day25.solvePt1(readResource("25.txt")))
         }
 
     }

@@ -1,6 +1,6 @@
 object AoC_Day12 {
 
-    private fun parseInput(input: Sequence<String>) : Map<Int, List<Int>> = input.associate { value ->
+    private fun parseInput(input: List<String>) : Map<Int, List<Int>> = input.associate { value ->
         val split = value.split(" <-> ")
         split[0].toInt() to split[1].split(",").map { it.trimStart().toInt() }
     }
@@ -16,7 +16,7 @@ object AoC_Day12 {
         return countGroups(theMap.filter { !rootGroup.contains(it.key) }, theCount + 1)
     }
 
-    fun solvePt1(input: Sequence<String>) : Int = getGroupWithRoot(parseInput(input), listOf(0),0, 0).size
+    fun solvePt1(input: List<String>) : Int = getGroupWithRoot(parseInput(input), listOf(0),0, 0).size
 
-    fun solvePt2(input: Sequence<String>) : Int = countGroups(parseInput(input), 0)
+    fun solvePt2(input: List<String>) : Int = countGroups(parseInput(input), 0)
 }

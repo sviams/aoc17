@@ -6,13 +6,12 @@ import kotlin.test.assertEquals
 class AoC_Day10_Tests : Spek({
 
     val initialTaskState = (0..255).toList()
-    val task = sequenceOf(147,37,249,1,31,2,226,0,161,71,254,243,183,255,30,70)
-    val taskString = "147,37,249,1,31,2,226,0,161,71,254,243,183,255,30,70"
+    val task = "147,37,249,1,31,2,226,0,161,71,254,243,183,255,30,70"
 
     given("AoC Day 10 part 1") {
 
         it("should be correct for valid ref data") {
-            assertEquals(12, AoC_Day10.solvePt1(sequenceOf(3, 4, 1, 5), (0..4).toList()))
+            assertEquals(12, AoC_Day10.solvePt1("3,4,1,5", (0..4).toList()))
         }
 
         it("should be correct for the task") {
@@ -41,7 +40,7 @@ class AoC_Day10_Tests : Spek({
         }
 
         it("should be correct for the task") {
-            assertEquals("70b856a24d586194331398c7fcfa0aaf", AoC_Day10.solvePt2(taskString, initialTaskState))
+            assertEquals("70b856a24d586194331398c7fcfa0aaf", AoC_Day10.solvePt2(task, initialTaskState))
         }
 
     }

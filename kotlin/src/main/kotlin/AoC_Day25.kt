@@ -7,7 +7,7 @@ object AoC_Day25 {
     fun parseInput(input: List<String>) : Pair<CpuState, Map<Char, (CpuState) -> CpuState>> {
         val startOp = input.first().split(" ")[3].toCharArray().first()
         val stopCond = input.get(1).split(" ")[5].toLong()
-        val opInput = input.drop(3).chunked(10).associate { it.first().split(" ")[2]!!.toCharArray().first() to parseOp(it.drop(1)) }
+        val opInput = input.drop(3).chunked(10).associate { it.first().split(" ")[2].toCharArray().first() to parseOp(it.drop(1)) }
         return Pair(CpuState(HashMap(5000), startOp, 0, 0, stopCond), opInput)
     }
 
